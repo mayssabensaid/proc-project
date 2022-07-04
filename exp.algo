@@ -1,0 +1,54 @@
+
+PROCEDURE dot-product(v1 : ARRAY_OF type[2]; , v2 : ARRAY_OF type[2] , ps:INTEGER;) ;INTEGER
+VAR
+    a,b,i:INTEGER  ; 
+    
+BEGIN
+    ps := 0; 
+    read_v1(v1);
+    read_v2(v2);
+    
+    ps := ps + v1[a]*v2[b] + v1[b]+v2[a]
+    return ps ;
+    write(ps) ;
+
+END
+FUNCTION orthogonaux(v1:ARRAY_OF INTEGER[n];v2:ARRAY_OF INTEGER[n];ps,n:integer;) : STRING
+VAR
+    ps := 0;
+    i :integer := 0;
+
+BEGIN
+    FOR i FROM 0 TO n.length -1 STEP  1  DO
+        dot-product(v1,v2,ps)
+        IF (ps=0) THEN
+            RETURN("les deux vecteurs sont orthogonaux") ;
+            else
+            RETURN("les deux vecteurs ne sont pad orthogonaux") ;
+        END_IF
+    END_FOR
+    
+END
+
+
+
+
+
+
+ALGORITHM dot_product1(n:integer;)
+VAR
+    V1 : ARRAY_OF integer[n];
+    V2 : ARRAY_OF integer[n];
+    i : INTEGER;  
+BEGIN
+    
+    read(n);
+
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        FOR j FROM 0 TO n-1 STEP 1  DO
+            read(V1[i]);
+            read(V2[j]);
+        END_FOR
+    END_FOR
+    dot_prudect(V1,V2,n);
+END
